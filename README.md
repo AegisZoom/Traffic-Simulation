@@ -1,1 +1,1 @@
-This is a new repository
+This repository contains all of my work for The Art of Scientific Computation (COMP90072). This subject consisted of one assignment worth 100% of the final grade split into two components: the code and the report.
