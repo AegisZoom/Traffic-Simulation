@@ -44,15 +44,13 @@ These grains of sand can also be stacked onto each other, meaning more than one 
 ![Stage3](https://github.com/AegisZoom/Traffic-Simulation/blob/Add-Files/Sand%20Pile%20Examples/Stage%203.png)
 
 However, just like in real life there are limits to stacking things narrowly on top of each other. In these models, a threshold value 
-is eventually reached where the grid tile becomes 'unstable', such as in the grid below with the maroon tile containing four sand grains:
+is eventually reached where the grid tile becomes 'unstable', such as in the left grid below with the maroon tile containing four sand grains:
 
-![ToppleBefore](https://github.com/AegisZoom/Traffic-Simulation/blob/Add-Files/Sand%20Pile%20Examples/Topple%20Before.png)
+![Topple](https://github.com/AegisZoom/Traffic-Simulation/blob/Add-Files/Sand%20Pile%20Examples/Topple.png)
 
 The maroon tile contains too many sand grains, and thus it experiences a 'topple', in which it transfers the sand grains to adjacent tiles 
 to return to a stable value once more. In this case, the maroon tile loses all its sand grains, and its left, right, top, and bottom neighbours 
 instantaneously inherit one sand grain each. There can be many variants to the behaviour of toppling, and this is but one example.
-
-![ToppleAfter](https://github.com/AegisZoom/Traffic-Simulation/blob/Add-Files/Sand%20Pile%20Examples/Topple%20After.png)
 
 Eventually, enough sand grains can be placed so that each topple can destabilise neighbouring tiles and induce a chain reaction of topples across 
 the grid. This behaviour is especially notable in larger grids, and is the main attraction of these systems. They have been proven to be highly 
@@ -60,20 +58,41 @@ effective in predicting real-life scenarios, most notably in bushfire modelling.
 
 ![largerGrid](https://github.com/AegisZoom/Traffic-Simulation/blob/Add-Files/Sand%20Pile%20Examples/Larger%20Grid.png)
 
-At the time of my Master of Physics, I wanted to challenge myself and aim for an ambitious and unorthordox application to sand-pile modelling. I 
-settled on traffic, due to the inherent challenge of giving these 'grains' a velocity and destination they would aim to reach. The idea of 
-creating topples as a consequence of congestion in traffic was appealing to me, especially given that the topples would function as a behavioural 
-change for the movement of vehicles in traffic: cars on their own would move quickly and continuously, while packed cars would move slower and aim 
-to spread out as best as they can.  This also had implications for switching between lanes: cars under low densities would tend to stick to their 
-lanes, but cars in congestion will often switch lanes the moment they see neighbouring cars outpacing them. The behaviour of vehicles/grains in 
-this model could be emulated based on real-life experience. I settled on restricting myself to a freeway for complex reasons explained in my 
-report, however there were a number of characterisitics still that were implemented to customise highway simulation: namely timestep durations, 
-highway length and width, time-dependent vehicle flux, entry and exit points, and traffic lights.
+With the mechanics of sand-pile modelling explained, I can explain the premise of the traffic simulation. These topple behaviours can also be applied
+to traffic. Drivers prefer to keep safe distances between each other, but sometimes this isn't possible. Traffic congestion is a big problem Melbourne
+faces, so frequently vehicles are tightly packed and make slow progress on the road. If there is an opportunity to create more space and thus more speed,
+any driver will take it, and this defines a topple for the simulation. This is a simple approximation of driving behaviour, but an effecive one as demonsrated
+by the example of the simulation below.
 
-## Explaining Files and Folders
+![Animation](https://github.com/AegisZoom/Traffic-Simulation/blob/Add-Files/Sand%20Pile%20Examples/Traffic_Animation.gif)
 
-Python version 3.11.2
-matplotlib version 3.7.1
-numpy version 2.2.3
-scipy version 1.10.1
+The biggest challenge for developing this simulation is that unlike static sand-pile models, vehicles have a destination and a velocity. They change their movement and
+behaviour when they get clustered, which can happen from traffic lights (flashing blue horizontal streaks), entry and exit points, neighboruing lanes, and so on.
+For more details, feel free to read my report.
 
+## Files, Folders and Specifications
+
+In this directory, the report for this project is found in the file titled *COMP90072 Report 993443.pdf* which details the developmental processes and design of the traffic simulator and the prototypes before it. *Traffic_Simulation.mp4* contains the simulation animation played above, which the program produces when it runs each simulation.
+
+The *Sand Pile Examples* folder only contains the images and animations used to construct this page, and is not necessary nor important otherwise. The *Prototypes* folder
+contains the sand-pile prototypes I developed to familiarise myself with this style of program, and to learn its limitations before I started constructing the proper simulator. *Sand Pile Gradient.py* was the final prototype I developed before I decided the direction and programming techniques that would define the simulator. For more details on each, please refer to the report.
+
+The *Final* folder houses the files necessary to run the simulation. It was designed to have its parameters customised by the user to test out different scenarios, and the program will provide example parameters to input for new users as well. To run the simulation, refer to these instructions:
+
+1. Download the *Final* folder.
+2. Open the program in a PyCharm IDE or equivalent. It is important that both Python files can run in the same window, because the simulation is dependent on both.
+3. Run *Simulation_Example.py*, which loads simulation parameters to be read by *Traffic_Model.py*. You can edit the parameters to visualise traffic flow under different circumstances, including traffic flux, timestep advancement, and more. It is not recommended to change these parameters unless you have experience with the simulator and have fully read the report.
+4. Run *Traffic_Model.py* and input extra parameters (the program provides default values). It will take some time to produce the simulation, but eventually an animation will play. If you have installed ffmpeg, the program will save the animation when you close the animation window as a mp4 file.
+
+*Note: The simulation was developed with the following Python and library versions in mind. These versions have since been superseded and your experience may vary.*
+
+*python version 3.11.2*
+
+*matplotlib version 3.7.1*
+
+*numpy version 2.2.3*
+
+*scipy version 1.10.1*
+
+*Note: It is also recommended to have ffmpeg installed on your computer, otherwise the program cannot save the simulation as an mp4 file to replay. This simulator makes heavy use
+of random processes and so inputting the same paramaters again will not result in the same simulation. The simulation will still be produced even without ffmpeg however.*
