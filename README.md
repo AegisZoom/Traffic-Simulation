@@ -18,14 +18,14 @@ encompasses the logic of the simulation. I also explain all the files and how to
 
 ## Skills Used
 
-- 💾 **Programming**: Used Python as the programming language, PyCharm as the IDE, and the NumPy, SciPy, and Matplotlib libraries.
+- 💾 **Programming**: Used Python 🐍 as the programming language, PyCharm as the IDE, and the NumPy, SciPy, and Matplotlib libraries.
 - 📐 **Problem-Solving**: Inventing mechanics of the traffic simulation, including density-dependent behaviour of vehicles, lane-switching mechanics, traffic lights, vehicle entry and exiting, and more using sand-pile and matrix fundamentals of programming.
 - ⚙️ **Agile Methodology**: Implemented cyclical stages of development, so that each feature was gradually rolled in with extensive testing and optimisation one at a time to make the program more scalable and realisable.
 - 🔍 **Debugging/Attention to Detail**: Rigorously had to trace the root causes of bugs and glitches in the program due to the variety and complexity of mechanics, especially as the program became larger and more feature-complete. Also lead to further optimisation of the code.
 - ✅ **Scope Management**: Planned ambitious but reasonable milestones that could be achieved in the 12-week deadline, and made sure to stick solely to those plans to give leeway for other studies, unexpected events, bug-fixing, and optimisation.
 - 📝 **Written Communication**: Submitted a 20-page report of the ideation and development of sand-pile modelling prototypes culminating in the final simulation, as well as in-depth explanations of mechanics, results, and areas of further development.
 - 📣 **Verbal Communication**: Showcase my project in an optional live presentation to an audience of peers, tutors, and the subject coordinator.
-- ⏰ **Time Management**: Organised weekly schedules and deadlines for individual milestones with leeway for unexpectable obstacles both related to and outside of the project, and prioritised developing the report alongside the program.
+- ⏰ **Time Management**: Organised weekly schedules and deadlines for individual milestones with leeway for unexpected obstacles both related to and outside of the project, and prioritised developing the report alongside the program.
 - 🔬 **Research**: Extensively investigated techniques and solutions online to implement simulation mechanics and identify unique errors and issues.
 
 ## Explaining Sand-Pile Modelling
